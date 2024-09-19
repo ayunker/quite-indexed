@@ -1,6 +1,5 @@
 import axios from "axios";
 import * as cheerio from "cheerio";
-import fs from "fs";
 
 const url = "https://en.wikipedia.org/wiki/List_of_QI_episodes";
 
@@ -55,10 +54,7 @@ async function fetchEpisodes() {
         });
     });
 
-  fs.writeFileSync(
-    "./data/qi_episodes.json",
-    JSON.stringify(episodes, null, 2),
-  );
+  Bun.write("./data/qi_episodes.json", JSON.stringify(episodes, null, 2));
   console.log("Data extracted to data/qi_episodes.json");
 }
 

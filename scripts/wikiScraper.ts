@@ -21,9 +21,6 @@ async function fetchEpisodes() {
   $(".wikiepisodetable")
     .slice(1)
     .each((seriesIndex, table) => {
-      const seriesLetter = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".charAt(seriesIndex);
-      const seriesName = `Series ${seriesLetter}`;
-
       $(table)
         .find("tr")
         .each((_, row) => {
@@ -32,12 +29,15 @@ async function fetchEpisodes() {
           // if (seriesIndex >= 1) return; // testing
 
           const numberInSeries = $(columns[0]).text().trim();
+          if (numberInSeries === "N/A") return; // skip specials
+
+          const title = $(columns[1]).text().trim();
+          const seriesLetter = title.at(1);
+          const seriesName = `Series ${seriesLetter}`;
           const episodeNumber = [seriesLetter, numberInSeries].join(".");
 
-          if (numberInSeries === "N/A") return; // skip headers
-
           const episode: Episode = {
-            title: $(columns[1]).text().trim(),
+            title: title,
             winner: $(columns[3]).text().trim(),
             originalAirDate: $(columns[4]).text().trim(),
             guests: $(columns[2])

@@ -711,7 +711,7 @@
       "Vic Reeves"
     ],
     "numberInSeries": "6",
-    "seriesName": "Series .",
+    "seriesName": "Series E",
     "episodeNumber": "E.6"
   },
   {
@@ -917,7 +917,7 @@
       "Ben Miller"
     ],
     "numberInSeries": "9",
-    "seriesName": "Series T",
+    "seriesName": "Series F",
     "episodeNumber": "F.9"
   },
   {
@@ -978,7 +978,7 @@
     "originalAirDate": "3 December 2009 (2009-12-03)12 October 2010 (XL edition)[fn 13]",
     "guests": [
       "Bill Bailey",
-      "John Hodgman[fn 12]",
+      "John Hodgman",
       "Sean Lock",
       "Sandi Toksvig"
     ],
@@ -1447,7 +1447,7 @@
     "originalAirDate": "14 October 2011 (2011-10-14)15 October 2011 (XL edition)",
     "guests": [
       "Bill Bailey",
-      "Nina Conti[fn 18]",
+      "Nina Conti",
       "Sean Lock"
     ],
     "numberInSeries": "6",
@@ -1559,7 +1559,7 @@
     "episodeNumber": "I.16"
   },
   {
-    "title": "The Immortal Bard[fn 22]",
+    "title": "The Immortal Bard",
     "winner": "David Mitchell",
     "originalAirDate": "27 April 2012 (2012-04-27)19 May 2012 (XL edition)",
     "guests": [
@@ -1568,8 +1568,8 @@
       "Sue Perkins"
     ],
     "numberInSeries": "17",
-    "seriesName": "Series T",
-    "episodeNumber": "T.17"
+    "seriesName": "Series I",
+    "episodeNumber": "I.17"
   },
   {
     "title": "Idleness",
@@ -2777,7 +2777,7 @@
       "Noel Fielding"
     ],
     "numberInSeries": "12",
-    "seriesName": "Series T",
+    "seriesName": "Series O",
     "episodeNumber": "O.12"
   },
   {
@@ -3661,8 +3661,8 @@
       "Hannah Waddingham"
     ],
     "numberInSeries": "2",
-    "seriesName": "Series '",
-    "episodeNumber": "'.2"
+    "seriesName": "Series T",
+    "episodeNumber": "T.2"
   },
   {
     "title": "Television",
@@ -3672,7 +3672,7 @@
       "Greg James",
       "Zoe Lyons",
       "Richard Osman",
-      "Basil Brush[fn 39]"
+      "Basil Brush"
     ],
     "numberInSeries": "3",
     "seriesName": "Series T",
@@ -3922,8 +3922,8 @@
       "Ahir Shah"
     ],
     "numberInSeries": "8",
-    "seriesName": "Series '",
-    "episodeNumber": "'.8"
+    "seriesName": "Series U",
+    "episodeNumber": "U.8"
   },
   {
     "title": "Unrelated",

@@ -13,11 +13,25 @@ interface Episode {
   episodeNumber: string;
 }
 
-function cleanTitle(title: string) {
-  return title
+function cleanText(s: string) {
+  return s
     .replace(/"/g, "")
-    .replace(/\[fn \d\]/, "")
+    .replace(/\[fn \d+\]/, "")
     .trim();
+}
+
+function cleanTitle(title: string) {
+  if (title.includes(".mw-parser-output")) {
+    return "Everything, Etc.";
+  }
+
+  return cleanText(title);
+}
+
+function seriesLetterFor(title: string) {
+  if (title.startsWith("The ")) return title.at(4);
+  const [first, second] = title;
+  return /[a-zA-Z]/.test(first) ? first : second;
 }
 
 async function fetchEpisodes() {
@@ -41,7 +55,7 @@ async function fetchEpisodes() {
           const title = cleanTitle($(columns[1]).text());
           if (title.startsWith("QI VG")) return; // skip VG episodes
 
-          const seriesLetter = title.at(0);
+          const seriesLetter = seriesLetterFor(title);
           const seriesName = `Series ${seriesLetter}`;
           const episodeNumber = [seriesLetter, numberInSeries].join(".");
 
@@ -53,7 +67,7 @@ async function fetchEpisodes() {
               .text()
               .trim()
               .split("\n")
-              .map((g) => g.trim()),
+              .map((g) => cleanText(g)),
             numberInSeries: numberInSeries,
             seriesName: seriesName,
             episodeNumber: episodeNumber,

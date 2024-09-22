@@ -13,6 +13,13 @@ interface Episode {
   episodeNumber: string;
 }
 
+function cleanTitle(title: string) {
+  return title
+    .replace(/"/g, "")
+    .replace(/\[fn \d\]/, "")
+    .trim();
+}
+
 async function fetchEpisodes() {
   const { data } = await axios.get(url);
   const $ = cheerio.load(data);
@@ -20,7 +27,7 @@ async function fetchEpisodes() {
 
   $(".wikiepisodetable")
     .slice(1)
-    .each((seriesIndex, table) => {
+    .each((_, table) => {
       $(table)
         .find("tr")
         .each((_, row) => {
@@ -31,8 +38,10 @@ async function fetchEpisodes() {
           const numberInSeries = $(columns[0]).text().trim();
           if (numberInSeries === "N/A") return; // skip specials
 
-          const title = $(columns[1]).text().trim();
-          const seriesLetter = title.at(1);
+          const title = cleanTitle($(columns[1]).text());
+          if (title.startsWith("QI VG")) return; // skip VG episodes
+
+          const seriesLetter = title.at(0);
           const seriesName = `Series ${seriesLetter}`;
           const episodeNumber = [seriesLetter, numberInSeries].join(".");
 

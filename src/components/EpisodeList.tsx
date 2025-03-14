@@ -16,11 +16,14 @@ const EpisodeList: React.FC<EpisodeListProps> = ({ episodes }) => {
   }
 
   return (
-    <div className="episode-list">
-      {episodes.map(episode => (
-        <EpisodeCard key={episode.episodeNumber} episode={episode} />
-      ))}
-    </div>
+    <>
+      <h2>{episodes.length} Episodes for Selected Guests!</h2>
+      <div className="episode-list">
+        {episodes.map(episode => (
+          <EpisodeCard key={episode.episodeNumber} episode={episode} />
+        ))}
+      </div>
+    </>
   );
 };
 

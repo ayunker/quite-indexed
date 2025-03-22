@@ -1,0 +1,19 @@
+service: quite-indexed
+
+image: tonyyunker/quite-indexed
+
+servers:
+  web:
+    - 157.245.90.133
+
+proxy:
+  app_port: 5174
+
+registry:
+  username: tonyyunker
+
+  password:
+    - KAMAL_REGISTRY_PASSWORD
+
+builder:
+  arch: amd64

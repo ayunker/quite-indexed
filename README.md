@@ -11,4 +11,4 @@ index to `data/qi_inverted_index.json`. All encapsulated in `just reload`.
 Quite Indexed is deployed on [Render]. Render watches this repo on github and
 will pull latest and build from source using `bun run build`. Nice and simple
 
-[Render]: render.com
+[Render]: https://render.com

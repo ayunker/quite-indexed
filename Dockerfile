@@ -1,6 +1,4 @@
-FROM lipanski/docker-static-website:latest
+FROM nginx
+COPY ./dist /usr/share/nginx/html
 
-# Copy your static files
-COPY ./dist/ ./
-
-CMD ["/busybox-httpd", "-f", "-v", "-p", "5174", "-c", "httpd.conf"]
+EXPOSE 80
